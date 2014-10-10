@@ -1,0 +1,54 @@
+/*
+ * css/basic.css
+ * Author: Zex <top_zlynch@yahoo.com>
+ */
+
+body {
+    font-weight: bold;
+    color: #920481;
+    background-color: #090d0d;
+    margin-left: 10%;
+    margin-right: 20%;
+    width: 80%;
+    outline: 5px outset #1377d3;
+    border: 5px inset #1315dd;
+}
+
+img {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+    height: 200px;
+}
+
+th, tr, td {
+    background-color: #152079;
+    color: #837192;
+    border: 3px solid #157401;
+}
+
+table {
+    background-color: #152079;
+    color: #837192;
+    border: 3px solid #157401;
+    margin-left: 2%;
+    margin-right: 2%;
+    width: 96%; 
+}
+
+input[type=text], input[type=submit], label, textarea, select {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+div, p {
+    margin-left: 2%;
+    margin-right: 2%;
+	line-height: 3em;
+}
+
+textarea {
+    width: 80%;
+    height: 50%;
+}
+
