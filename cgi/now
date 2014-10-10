@@ -1,8 +1,0 @@
-#!/usr/bin/python
-
-import time
-
-print "Content-Type: text/html"
-print
-print "<input id=\"cur_time\" type=text rows=30 cols=100 readonly=\"true\" value=\"",time.strftime(time.asctime()), "\"/><br>"
-
