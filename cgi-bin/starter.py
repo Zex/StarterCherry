@@ -96,6 +96,16 @@ print "<input type=\"submit\" value=\"Submit\"/><br>"
 print "</form>"
 print "</div>"
 
+print "<div>"
+print "<form action=\"youout.py\" method=post>"
+print "<label for=total_player><b>Total player: </b></label>"
+print "<input type=text name=\"total_player\"/><br>"
+print "<label for=\"unlucky_n\"><b>Unlucky N: </b></label>"
+print "<input type=text name=\"unlucky_n\" /><br>"
+print "<input type=\"submit\" value=\"YouOut!\"/><br>"
+print "</form>"
+print "</div>"
+
 print "</body>"
 print "</html>"
 
