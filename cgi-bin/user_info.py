@@ -1,4 +1,7 @@
 #!/usr/bin/env python
+#
+# user_info.py
+# Author: Zex <top_zlynch@yahoo.com>
 
 def create_html(xlsname, sheetname):
     data = {}
