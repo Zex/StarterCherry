@@ -13,25 +13,25 @@ def ranseq(length):
     ancient_a = [randint(1, 1000) for i in xrange(int(length))]
     ancient_b = [randint(1, 1000) for i in xrange(int(length))]
 
-    print "<label>Ancient a: </label><textarea type=\"text\" readonly=true>", ancient_a, "</textarea><br>"
-    print "<label>Ancient b: </label><textarea type=\"text\" readonly=true>", ancient_b, "</textarea><br>"
+    print "<label>Ancient a: </label><p><span contenteditable=\"false\">", ancient_a, "</span></p>"
+    print "<label>Ancient b: </label><p><span contenteditable=\"false\">", ancient_b, "</span></p>"
 
     ancient_a.extend(ancient_b)
     ancient_a.sort()
 
-    print "<label>Ancient a: </label><textarea type=\"text\" readonly=true>", ancient_a, "</textarea><br>"
+    print "<label>Ancient a: </label><p><span contenteditable=\"false\">", ancient_a, "</span></p>"
 
     child_min = ancient_a[:(len(ancient_a)-2)/2]
     child_max = ancient_a[(len(ancient_a)-2)/2:-2]
 
-    print "<label>child_min: </label><textarea type=\"text\" readonly=true>", child_min, "</textarea><br>"
-    print "<label>child_max: </label><textarea type=\"text\" readonly=true>", child_max, "</textarea><br>"
+    print "<label>child_min: </label><p><span contenteditable=\"false\">", child_min, "</span></p>"
+    print "<label>child_max: </label><p><span contenteditable=\"false\">", child_max, "</span></p>"
 
     child_min.append(ancient_a[-1])
     child_max.append(ancient_a[-2])
 
-    print "<label>child_min sum: </label><textarea type=\"text\" readonly=true>", reduce(lambda x,y:x+y, child_min), "</textarea><br>"
-    print "<label>child_max sum: </label><textarea type=\"text\" readonly=true>", reduce(lambda x,y:x+y, child_max), "</textarea><br>"
+    print "<label>child_min sum: </label><p><span contenteditable=\"false\">", reduce(lambda x,y:x+y, child_min), "</span></p>"
+    print "<label>child_max sum: </label><p><span contenteditable=\"false\">", reduce(lambda x,y:x+y, child_max), "</span></p>"
 #    print "---------------------------------------------------------+"
 
 def reply():
