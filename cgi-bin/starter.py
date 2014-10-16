@@ -18,7 +18,7 @@ print "</head>"
 
 print "<body>"
 print "<div>"
-print "<img src=\"/img/cattail.jpg\" border=0>"
+print "<img src=\"/img/cattail.jpg\" height=200px>"
 print "</div>"
 
 print "<div>"
@@ -116,7 +116,13 @@ print "<span>Arabic/Roman Number </span><input name=\"rnum\" type=\"text\"/><br>
 print "</form>"
 print "</td>"
 
-for i in xrange(2):
+print "<td>"
+print "<form action=\"plotting.py\" method=post>"
+print "<input type=\"submit\" value=\"Plot\"/><br>"
+print "</form>"
+print "</td>"
+
+for i in xrange(1):
 	print "<td>"
 	print "<form action=\"hello_baby.py\" method=get>"
 	print "<input type=\"submit\" value=\"TOBE CONTINUE...\"/><br>"
