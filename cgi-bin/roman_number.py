@@ -6,6 +6,8 @@
 #>>> getopt.getopt("-l 30 -h --color .".split(' '), 'l:h', "color")
 # ([('-l', '30'), ('-h', ''), ('--color', '')], ['.'])
 
+config = {}
+
 class RomanNum():
     """
     Translate Rome number into Arabic one and vice versa.
@@ -57,50 +59,52 @@ class RomanNum():
 
     @staticmethod
     def to_arabic(in_str):
-        print "to_arabic"
-        pass #TODO
+        ret += "to_arabic"
+        return ret #TODO
 #        return reduce(lambda a,n: a+n, [RN[c] for c in in_str])
 
 def roman_number(rnum):
 
-    print "<label>Roman/Arabic Number: </label><p><span contenteditable=\"false\">"
+    ret = "<label>Roman/Arabic Number: </label><p><span contenteditable=\"false\">"
    
     try:
 
-        RomanNum.to_roman(int(rnum))
+        ret += RomanNum.to_roman(int(rnum))
 
     except Exception as e:
 
-        print e
+        ret += str(e)
 
         try:
-            RomanNum.to_arabic(rnum)
+            ret += RomanNum.to_arabic(rnum)
         except Exception as e:
-            print e
+            ret += str(e)
 
-    print "</span></p>"
+    ret += "</span></p>"
+    return ret
 
+def reply(req, kwargs = {}):
 
-def reply():
-    import cgi
-    fields = cgi.FieldStorage()
+    global config
+    config = req.config
+
     title = "Roman Number"
     
-    print "Content-Type: text/html\n\n"
-    print "<!DOCTYPE html>"
-    print "<html>"
+    ret = "<!DOCTYPE html>"
+    ret += "<html>"
     
-    print "<head>"
-    print "<title>", title, "</title>"
-    print "<link href=\"/css/basic.css\" rel=\"stylesheet\" type=\"text/css\">"
-    print "<meta charset=\"UTF-8\">"
-    print "</head>"
+    ret += "<head>"
+    ret += "<title>" + title + "</title>"
+    ret += "<link href=\"/css/basic.css\" rel=\"stylesheet\" type=\"text/css\">"
+    ret += "<meta charset=\"UTF-8\">"
+    ret += "</head>"
     
-    print "<body>"
+    ret += "<body>"
     
-    roman_number(fields["rnum"])
+    ret += roman_number(kwargs["rnum"])
     
-    print "</body>"
-    print "</html>"
+    ret += "</body>"
+    ret += "</html>"
 
-reply()
+    return ret
+
