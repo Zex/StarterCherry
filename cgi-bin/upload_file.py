@@ -1,30 +1,41 @@
 #!/usr/bin/env python
 
-import cgi
+config = {}
 
-fields = cgi.FieldStorage()
-title = fields["file_name"].value
+def reply(req, kwargs = {}):
 
-print "Content-Type: text/html\n\n"
-print "<!DOCTYPE html>"
-print "<html>"
+    global config
+    config = req.config
 
-print "<head>"
-print "<title>", title,"</title>"
-print "<link href=\"/css/basic.css\" rel=\"stylesheet\" type=\"text/css\">"
-print "<meta charset=\"UTF-8\">"
-print "</head>"
+    title = kwargs["file_name"].filename
+    ret = ''
 
-print "<body>"
+    ret += "<!DOCTYPE html>"
+    ret += "<html>"
+    
+    ret += "<head> "
+    ret += "<title>" + str(title) + "</title>"
+    ret += "<link href=\"/css/basic.css\" rel=\"stylesheet\" type=\"text/css\">"
+    ret += "<meta charset=\"UTF-8\">"
+    ret += "</head>"
+    
+    ret += "<body>"
+    
+    for k in kwargs.items():
 
-#filebuf = fields["file_name"].file.read()
-#lines = filebuf.split('\n')
+    	ret += "<b>" + "File Name: " + str(k[1].filename) + "</b><br>"
+        ret += "<span contenteditable=\"false\">"
 
-while line = fields["file_name"].file.read():
-	print "<p><b>", line,"</b></p>"
+        with open(str(config['/uploads']['tools.staticdir.dir'] + '/' + k[1].filename), 'w') as fd:
 
+            for line in k[1].file.readlines():
+             	ret +=  line + "<br>"
+                fd.write(line)
 
+        ret += "</span>"
+    
+    ret += "</body>"
+    ret += "</html>"
 
-print "</body>"
-print "</html>"
+    return ret
 
