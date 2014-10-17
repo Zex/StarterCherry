@@ -3,7 +3,10 @@
 # user_info.py
 # Author: Zex <top_zlynch@yahoo.com>
 
+config = {}
+
 def create_html(xlsname, sheetname):
+
     data = {}
     data['userid'] = [23,4,36,14,1,63,123]
     data['useremail'] = [
@@ -15,35 +18,37 @@ def create_html(xlsname, sheetname):
         'x35sd@sfsf.com',
         'x234sd@sfsf.com',
     ]
-    print "<label>helo</label>"
+
     from pandas import DataFrame
-    print "<label>helo</label>"
+    ret = ''
+
+    ret += "<label>helo</label>"
     xls = DataFrame(data)
     #xls.to_excel(xlsname, sheetname, index=False)
     return xls.to_html(index=False)
 
-def reply():
-    import cgi
-#    fields = cgi.FieldStorage()
+def reply(req):
+
+    global config
+    config = req.config
+
     title = "User Info"
     
-    print "Content-Type: text/html\n\n"
-    print "<!DOCTYPE html>"
-    print "<html>"
+    ret = "<!DOCTYPE html>"
+    ret += "<html>"
     
-    print "<head>"
-    print "<title>", title, "</title>"
-    print "<link href=\"/css/basic.css\" rel=\"stylesheet\" type=\"text/css\">"
-    print "<meta charset=\"UTF-8\">"
-    print "</head>"
+    ret += "<head>"
+    ret += "<title>" + title + "</title>"
+    ret += "<link href=\"/css/basic.css\" rel=\"stylesheet\" type=\"text/css\">"
+    ret += "<meta charset=\"UTF-8\">"
+    ret += "</head>"
     
-    print "<body>"
+    ret += "<body>"
     
-    print create_html('all-log-pandas.xls', 'user-info')
+    ret += create_html(config['/res']['tools.staticdir.dir'] + '/' + 'all-log-pandas.xls', 'user-info')
     
-    print "</body>"
-    print "</html>"
+    ret += "</body>"
+    ret += "</html>"
 
-#if __name__ == '__main__':
-reply()
+    return ret
 
