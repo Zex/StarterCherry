@@ -1,0 +1,164 @@
+Interface: eth0, datalink type: EN10MB (Ethernet)
+Starting arp-scan 1.8.1 with 256 hosts (http://www.nta-monitor.com/tools/arp-scan/)
+192.168.0.1	58:66:ba:f2:7d:fa	(Unknown)
+192.168.0.3	74:ea:3a:14:4a:45	TP-LINK Technologies Co.,Ltd.
+192.168.0.6	90:b1:1c:5b:f8:70	(Unknown)
+192.168.0.4	78:45:c4:0e:d8:8b	(Unknown)
+192.168.0.8	00:21:97:3c:7e:d3	ELITEGROUP COMPUTER SYSTEM
+192.168.0.9	78:2b:cb:92:57:46	Dell Inc
+192.168.0.12	6c:ae:8b:1c:f7:05	(Unknown)
+192.168.0.14	90:b1:1c:5b:fc:88	(Unknown)
+192.168.0.15	00:23:69:a5:82:43	Cisco-Linksys, LLC
+192.168.0.16	d4:be:d9:99:63:ad	(Unknown)
+192.168.0.18	90:b1:1c:5b:f9:82	(Unknown)
+192.168.0.20	a4:1f:72:88:51:5b	(Unknown)
+192.168.0.21	a4:ba:db:ff:04:39	Dell Inc.
+192.168.0.23	90:b1:1c:5b:f9:4c	(Unknown)
+192.168.0.26	00:25:64:e2:81:45	Dell Inc.
+192.168.0.26	00:25:64:e2:81:45	Dell Inc. (DUP: 2)
+192.168.0.27	00:1a:92:0d:47:12	ASUSTek COMPUTER INC.
+192.168.0.28	78:2b:cb:92:4c:5e	Dell Inc
+192.168.0.31	d4:be:d9:b8:41:7e	(Unknown)
+192.168.0.30	d4:be:d9:a3:6e:30	(Unknown)
+192.168.0.33	14:fe:b5:ec:51:87	Dell Inc
+192.168.0.32	00:22:46:03:56:ed	Evoc Intelligent Technology Co.,Ltd.
+192.168.0.34	78:45:c4:11:73:06	(Unknown)
+192.168.0.35	d0:67:e5:0f:3c:0d	(Unknown)
+192.168.0.38	18:03:73:b4:93:c8	Dell Inc
+192.168.0.40	00:21:97:1f:56:64	ELITEGROUP COMPUTER SYSTEM
+192.168.0.41	00:1e:37:4e:32:f7	Universal Global Scientific Industrial Co., Ltd.
+192.168.0.44	14:fe:b5:eb:1f:36	Dell Inc
+192.168.0.43	00:21:97:3b:17:70	ELITEGROUP COMPUTER SYSTEM
+192.168.0.45	00:24:e8:21:75:5f	Dell Inc.
+192.168.0.46	00:16:e6:17:f1:b5	GIGA-BYTE TECHNOLOGY CO.,LTD.
+192.168.0.47	00:1f:d0:47:47:ca	GIGA-BYTE TECHNOLOGY CO.,LTD.
+192.168.0.48	d4:be:d9:a3:31:7f	(Unknown)
+192.168.0.49	28:d2:44:50:16:5b	(Unknown)
+192.168.0.49	28:d2:44:50:16:5b	(Unknown) (DUP: 2)
+192.168.0.50	58:66:ba:a0:64:b0	(Unknown)
+192.168.0.51	00:1a:92:da:79:d2	ASUSTek COMPUTER INC.
+192.168.0.53	78:2b:cb:92:49:8a	Dell Inc
+192.168.0.56	78:2b:cb:92:51:44	Dell Inc
+192.168.0.54	d4:be:d9:d8:60:8c	(Unknown)
+192.168.0.57	00:1e:0b:1a:74:18	Hewlett Packard
+192.168.0.58	00:30:c1:09:db:5d	HEWLETT-PACKARD
+192.168.0.59	78:2b:cb:cd:cd:cd	Dell Inc
+192.168.0.61	00:1b:fc:87:62:a3	ASUSTek COMPUTER INC.
+192.168.0.62	20:6a:8a:4f:92:b7	Wistron InfoComm Manufacturing(Kunshan)Co.,Ltd.
+192.168.0.63	d0:67:e5:0e:aa:9e	(Unknown)
+192.168.0.64	d0:67:e5:0f:3d:0c	(Unknown)
+192.168.0.65	a4:1f:72:87:a3:c7	(Unknown)
+192.168.0.60	00:15:17:58:c4:d3	Intel Corporate
+192.168.0.66	e8:9a:8f:d8:e4:27	Quanta Computer Inc.
+192.168.0.67	00:00:74:81:92:5a	RICOH COMPANY LTD.
+192.168.0.70	e8:9a:8f:d8:e0:e6	Quanta Computer Inc.
+192.168.0.72	78:2b:cb:92:83:03	Dell Inc
+192.168.0.73	bc:30:5b:c0:6a:27	Dell Inc.
+192.168.0.74	00:24:e8:21:74:6e	Dell Inc.
+192.168.0.75	78:45:c4:19:b2:7f	(Unknown)
+192.168.0.76	bc:30:5b:c0:ef:ad	Dell Inc.
+192.168.0.77	78:45:4c:12:47:91	(Unknown)
+192.168.0.78	00:25:11:e2:f3:40	ELITEGROUP COMPUTER SYSTEM CO., LTD.
+192.168.0.80	a4:1f:72:88:47:1b	(Unknown)
+192.168.0.79	78:2b:cb:91:52:67	Dell Inc
+192.168.0.36	78:6a:89:4f:53:d6	(Unknown)
+192.168.0.84	78:45:c4:12:47:89	(Unknown)
+192.168.0.85	00:1a:92:40:47:b1	ASUSTek COMPUTER INC.
+192.168.0.86	d4:be:d9:a2:ab:ad	(Unknown)
+192.168.0.87	f0:4d:a2:dc:ac:35	Dell Inc.
+192.168.0.91	00:1a:92:da:7a:0d	ASUSTek COMPUTER INC.
+192.168.0.92	00:21:97:7b:c4:ea	ELITEGROUP COMPUTER SYSTEM
+192.168.0.93	0c:82:68:d2:dd:77	(Unknown)
+192.168.0.94	78:45:c4:12:8c:19	(Unknown)
+192.168.0.95	00:21:98:1f:56:0c	Thai Radio Co, LTD
+192.168.0.97	78:2b:cb:92:4c:19	Dell Inc
+192.168.0.99	e8:9a:8f:d8:da:1d	Quanta Computer Inc.
+192.168.0.101	00:1a:92:73:6b:3f	ASUSTek COMPUTER INC.
+192.168.0.100	00:18:fe:a6:e4:90	Hewlett Packard
+192.168.0.102	78:2b:cb:92:56:fe	Dell Inc
+192.168.0.104	00:15:17:73:b8:5f	Intel Corporate
+192.168.0.103	00:1a:4d:46:9f:92	GIGA-BYTE TECHNOLOGY CO.,LTD.
+192.168.0.105	bc:30:5b:c0:81:c7	Dell Inc.
+192.168.0.106	f0:4d:a2:db:0b:1b	Dell Inc.
+192.168.0.108	00:e0:6f:04:72:35	Motorola, Inc.
+192.168.0.115	b8:ac:6f:be:b6:7b	Dell Inc
+192.168.0.117	78:45:c4:11:2b:7d	(Unknown)
+192.168.0.119	14:fe:b5:eb:21:62	Dell Inc
+192.168.0.114	00:15:17:90:e1:f7	Intel Corporate
+192.168.0.123	14:fe:b5:ec:18:b1	Dell Inc
+192.168.0.121	d0:67:e5:05:9b:15	(Unknown)
+192.168.0.125	90:b1:1c:5b:f9:dc	(Unknown)
+192.168.0.126	78:2b:cb:b8:2e:7a	Dell Inc
+192.168.0.127	a4:1f:72:88:54:63	(Unknown)
+192.168.0.129	00:25:64:f6:9a:e1	Dell Inc.
+192.168.0.130	78:45:c4:12:83:1b	(Unknown)
+192.168.0.131	a4:1f:72:91:26:35	(Unknown)
+192.168.0.134	00:17:31:1f:2a:36	ASUSTek COMPUTER INC.
+192.168.0.135	14:fe:b5:ea:fe:f6	Dell Inc
+192.168.0.139	b8:ac:6f:1e:82:13	Dell Inc
+192.168.0.143	78:45:c4:12:83:14	(Unknown)
+192.168.0.144	00:1a:92:8d:d8:eb	ASUSTek COMPUTER INC.
+192.168.0.145	70:5a:b6:93:fe:01	COMPAL INFORMATION (KUNSHAN) CO., LTD. 
+192.168.0.147	08:60:6e:08:5c:0f	(Unknown)
+192.168.0.148	14:fe:b5:ef:05:f6	Dell Inc
+192.168.0.146	f0:4d:a2:fd:cb:08	Dell Inc.
+192.168.0.150	e8:9a:8f:a3:1a:41	Quanta Computer Inc.
+192.168.0.151	14:fe:b5:ec:17:11	Dell Inc
+192.168.0.152	78:45:c4:a8:e8:20	(Unknown)
+192.168.0.153	6c:ae:8b:1c:35:9d	(Unknown)
+192.168.0.155	f0:4d:a2:fd:67:a0	Dell Inc.
+192.168.0.154	6c:ae:8b:1c:f3:75	(Unknown)
+192.168.0.156	78:45:c4:12:86:19	(Unknown)
+192.168.0.158	00:15:f2:0c:82:b7	ASUSTek COMPUTER INC.
+192.168.0.157	00:13:21:c4:fc:ef	Hewlett Packard
+192.168.0.162	14:fe:b5:eb:1f:3b	Dell Inc
+192.168.0.165	00:1e:90:b9:0e:9e	Elitegroup Computer Systems Co
+192.168.0.167	00:1b:fc:87:62:d2	ASUSTek COMPUTER INC.
+192.168.0.173	00:25:11:e2:cc:2c	ELITEGROUP COMPUTER SYSTEM CO., LTD.
+192.168.0.170	00:18:f3:f6:36:37	ASUSTek COMPUTER INC.
+192.168.0.174	14:fe:b5:fa:58:59	Dell Inc
+192.168.0.175	bc:30:5b:c0:82:11	Dell Inc.
+192.168.0.176	e8:9a:8f:d8:e3:7d	Quanta Computer Inc.
+192.168.0.178	00:16:e6:17:f0:b4	GIGA-BYTE TECHNOLOGY CO.,LTD.
+192.168.0.180	00:25:11:e8:03:6f	ELITEGROUP COMPUTER SYSTEM CO., LTD.
+192.168.0.183	00:17:a4:96:da:de	Hewlett Packard
+192.168.0.184	f0:4d:a2:fd:64:83	Dell Inc.
+192.168.0.185	f0:4d:a2:fd:65:11	Dell Inc.
+192.168.0.186	00:23:cd:6e:47:89	TP-LINK TECHNOLOGIES CO., LTD.
+192.168.0.188	00:1c:c0:f7:5f:f6	Intel Corporate
+192.168.0.190	a4:1f:72:90:d7:cd	(Unknown)
+192.168.0.189	78:2b:cb:92:56:32	Dell Inc
+192.168.0.191	00:15:f2:0c:82:b3	ASUSTek COMPUTER INC.
+192.168.0.194	10:78:d2:98:91:4a	ELITEGROUP COMPUTER SYSTEM CO., LTD.
+192.168.0.192	00:18:f3:f6:37:ec	ASUSTek COMPUTER INC.
+192.168.0.197	00:1a:92:73:6a:ee	ASUSTek COMPUTER INC.
+192.168.0.198	00:1a:92:da:6f:44	ASUSTek COMPUTER INC.
+192.168.0.200	78:45:c4:12:85:85	(Unknown)
+192.168.0.205	78:45:c4:05:63:75	(Unknown)
+192.168.0.199	00:1a:92:76:f1:28	ASUSTek COMPUTER INC.
+192.168.0.202	14:fe:b5:ee:e5:40	Dell Inc
+192.168.0.203	a4:1f:72:89:e2:25	(Unknown)
+192.168.0.201	00:17:61:10:1a:41	ZKSoftware Inc.
+192.168.0.210	00:0c:29:fd:db:bd	VMware, Inc.
+192.168.0.215	14:fe:b5:fa:58:7b	Dell Inc
+192.168.0.216	bc:30:5b:c0:6c:e4	Dell Inc.
+192.168.0.218	00:1a:92:da:7a:50	ASUSTek COMPUTER INC.
+192.168.0.217	78:2b:cb:92:56:dc	Dell Inc
+192.168.0.220	14:fe:b5:eb:1f:73	Dell Inc
+192.168.0.222	b8:ac:6f:be:bd:6c	Dell Inc
+192.168.0.196	50:ea:d6:95:31:72	(Unknown)
+192.168.0.231	6c:f0:49:54:a4:d8	GIGA-BYTE TECHNOLOGY CO.,LTD.
+192.168.0.236	00:17:61:10:1a:d3	ZKSoftware Inc.
+192.168.0.234	5c:dd:70:9b:09:30	(Unknown)
+192.168.0.234	58:66:ba:2f:37:96	(Unknown) (DUP: 2)
+192.168.0.235	b8:ac:6f:be:bd:7d	Dell Inc
+192.168.0.237	00:17:61:10:19:87	ZKSoftware Inc.
+192.168.0.240	78:45:c4:11:cc:04	(Unknown)
+192.168.0.241	00:24:e8:21:75:4a	Dell Inc.
+192.168.0.244	78:45:c4:12:86:18	(Unknown)
+192.168.0.247	00:e0:4c:11:7c:a2	REALTEK SEMICONDUCTOR CORP.
+192.168.0.249	00:e0:4c:12:97:8b	REALTEK SEMICONDUCTOR CORP.
+192.168.0.250	28:51:32:05:b8:ec	Shenzhen Prayfly Technology Co.,Ltd
+
+159 packets received by filter, 0 packets dropped by kernel
+Ending arp-scan 1.8.1: 256 hosts scanned in 1.011 seconds (253.21 hosts/sec). 159 responded
