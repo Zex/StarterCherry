@@ -1,25 +1,31 @@
 #!/usr/bin/python
 
-import cgi
+import time
 
-fields = cgi.FieldStorage()
-title = "Message Box"
+def reply(req, kwargs = {}):
 
-print "Content-Type: text/html\n\n"
-print "<!DOCTYPE html>"
-print "<html>"
+    title = "Message Box"
+    
+    ret = "<!DOCTYPE html>"
+    ret += "<html>"
+    
+    ret += "<head>"
+    ret += "<title>" + title + "</title>"
+    ret += "<link href=\"/css/basic.css\" rel=\"stylesheet\" type=\"text/css\">"
+    ret += "<meta charset=\"UTF-8\">"
+    ret += "</head>"
+    
+    ret += "<body>"
+    
+    ret += "<span>" + "Message from " + req.remote.ip + ": " + str(req.remote.port)
+    ret += " " + time.strftime(time.asctime())
+    ret += "</span>"
 
-print "<head>"
-print "<title>", title, "</title>"
-print "<link href=\"/css/basic.css\" rel=\"stylesheet\" type=\"text/css\">"
-print "<meta charset=\"UTF-8\">"
-print "</head>"
+    ret += "<textarea readonly=\"true\">"
+    ret += kwargs['msgbox']
+    ret += "</textarea>"
 
-print "<body>"
+    ret += "</body>"
+    ret += "</html>"
 
-for k in fields.keys():
-	print "<b>", k.upper(), "</b>", fields[k].value,"<br>"
-
-print "</body>"
-print "</html>"
-
+    return ret
