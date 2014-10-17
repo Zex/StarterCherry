@@ -172,10 +172,14 @@
 #    'legend.handlelength': 2
 #   }
 
+config = {}
+
 def random_plot(begin, end, step = 1, titlestr = None):
 
     from pylab import plot, xlabel, ylabel, show, savefig, title
     from random import randint
+
+    global config
 
     plot([randint(begin, end) for i in xrange(begin, end/3, step)],
         [randint(begin, end) for i in xrange(begin, end/3, step)],
@@ -197,13 +201,15 @@ def random_plot(begin, end, step = 1, titlestr = None):
     xlabel('X')
     ylabel('Y')
 #    show()
-    savefig(titlestr.replace(' ', '-').lower())
+    savefig(config['/img']['tools.staticdir.dir'] + '/' + titlestr.replace(' ', '-').lower())
 
 def essay_char(essay):
 
     from pylab import xlabel, ylabel, show, savefig, title,\
          yticks, xlim, ylim, xticks, arange, figure, barh, grid, rcParams
     from string import ascii_letters
+
+    global config
 
     cnt = { x:0 for x in ascii_letters }
 
@@ -250,49 +256,55 @@ def essay_char(essay):
     xlabel('Characters Count')
     ylabel('Essay Characters')
 #    show()
-    savefig(titlestr.replace(' ', '-').lower(), bbox_inches='tight', pad_inches=0)
+    savefig(config['/img']['tools.staticdir.dir'] + '/' + titlestr.replace(' ', '-').lower(), bbox_inches='tight', pad_inches=0)
 
-def reply():
-#    import cgi
-#    fields = cgi.FieldStorage()
+def reply(req):#alpha_file = ''):
+
+    global config
+
+    config = req.config
+
     title = "Plots"
-    
-    print "Content-Type: text/html\n\n"
-    print "<!DOCTYPE html>"
-    print "<html>"
-    
-    print "<head>"
-    print "<title>", title, "</title>"
-    print "<link href=\"/css/basic.css\" rel=\"stylesheet\" type=\"text/css\">"
-    print "<meta charset=\"UTF-8\">"
-    print "</head>"
-    
-    print "<body>"
-    
-#    random_plot(1, 317, titlestr = 'Molecular Random Motion xxx')
-    essay_char(open('res/Licence', 'ro').read())
-    print "<table>"
-    print "<tr>"
-    print "<td>"
-    print "<img src=\"/img/molecular-random-motion-xxx.png\">"
-    print "</td>"
-    print "<td>"
-    print "<img src=\"/img/molecular-random-motion-xxx.png\">"
-    print "</td>"
-    print "<td>"
-    print "<img src=\"/img/molecular-random-motion-xxx.png\">"
-    print "</td>"
-    print "</tr>"
-    print "</table>"
-    print "<table>"
-    print "<tr>"
-    print "<td>"
-    print "<img src=\"/img/essay-char.png\">"
-    print "</td>"
-    print "</tr>"
-    print "</table>"
+    alpha_file = config['/res']['tools.staticdir.dir'] + '/Licence.Sample'
+   
+    ret = ''
  
-    print "</body>"
-    print "</html>"
+    ret += "<!DOCTYPE html>"
+    ret += "<html>"
+    
+    ret += "<head>"
+    ret += "<title>" + title + "</title>"
+    ret += "<link href=\"/css/basic.css\" rel=\"stylesheet\" type=\"text/css\">"
+    ret += "<meta charset=\"UTF-8\">"
+    ret += "</head>"
+    
+    ret += "<body>"
+    
+    random_plot(1, 317, titlestr = 'Molecular Random Motion xxx')
+#    essay_char(open('res/Licence.Sample', 'ro').read())
+    essay_char(open(alpha_file, 'ro').read())
+    ret += "<table>"
+    ret += "<tr>"
+    ret += "<td>"
+    ret += "<img src=\"/img/molecular-random-motion-xxx.png\">"
+    ret += "</td>"
+    ret += "<td>"
+    ret += "<img src=\"/img/molecular-random-motion-xxx.png\">"
+    ret += "</td>"
+    ret += "<td>"
+    ret += "<img src=\"/img/molecular-random-motion-xxx.png\">"
+    ret += "</td>"
+    ret += "</tr>"
+    ret += "</table>"
+    ret += "<table>"
+    ret += "<tr>"
+    ret += "<td>"
+    ret += "<img src=\"/img/essay-char.png\">"
+    ret += "</td>"
+    ret += "</tr>"
+    ret += "</table>"
+ 
+    ret += "</body>"
+    ret += "</html>"
 
-reply()
+    return ret
