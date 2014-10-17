@@ -1,25 +1,26 @@
 #!/usr/bin/python
 
-import cgi
+def reply(fr_name = ''):
 
-fields = cgi.FieldStorage()
-title = "Hello Baby"
+    title = "Hello Baby"
 
-print "Content-Type: text/html\n\n"
-print "<!DOCTYPE html>"
-print "<html>"
+    ret = ''
+    
+    ret += "<!DOCTYPE html>"
+    ret += "<html>"
+    
+    ret += "<head>"
+    ret += "<title>" + title + "</title>"
+    ret += "<link href=\"/css/basic.css\" rel=\"stylesheet\" type=\"text/css\">"
+    ret += "<meta charset=\"UTF-8\">"
+    ret += "</head>"
+    
+    ret += "<body>"
+    
+    ret += "<p>" + fr_name + "</p>"
+    
+    ret += "</body>"
+    ret += "</html>"
 
-print "<head>"
-print "<title>", title, "</title>"
-print "<link href=\"/css/basic.css\" rel=\"stylesheet\" type=\"text/css\">"
-print "<meta charset=\"UTF-8\">"
-print "</head>"
-
-print "<body>"
-
-for k in fields.keys():
-	print k, fields[k].value
-
-print "</body>"
-print "</html>"
+    return ret
 
