@@ -56,9 +56,9 @@ def whereyoulive(addr):
 
 def whereyoulive_sum():
 
-    ret = '<table>'
-    ret += '<th>' + "Address" + '</th>'
-    ret += '<th>' + "Total" + '</th>'
+    ret = "<table>"
+    ret += "<th>" + "Address" + "</th>"
+    ret += "<th>" + "Total/Address" + "</th>"
 
 # with redis
     conn = Connection(host=gethostname(),port=6379)
@@ -80,7 +80,9 @@ def whereyoulive_sum():
         ret += "<td><span>" + str(item[0]) + "</span></td>"
         ret += "</tr>"
 
-    ret += '</table>'
+    ret += "<tr align=\"center\"><td>" + "Sum" + "</td>"
+    ret += "<td>" + str(reduce(lambda i, j : i+j, [int(i) for i in vals])) + "</td></tr>"
+    ret += "</table>"
 
 # with file
 #   for item in addresses.items():
