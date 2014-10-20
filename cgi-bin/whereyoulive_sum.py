@@ -21,24 +21,28 @@ def preset(sample):
 
     global addresses
 
-# with file
-#    with open(sample, 'r') as fd:
-#        addresses = { p:0 for p in fd.readlines() }
-#    addresses[''] = 0;
-
-# with redis
     conn = Connection(host=gethostname(),port=6379)
 
     conn.send_command('keys', addr_prefix+'*')
     keys = conn.read_response()
+    vals = []
 
-    conn.send_command('mget', *keys)
-    vals = conn.read_response()
+    if len(keys) == 0:
+        with open(sample, 'r') as fd:
+            addresses = { p.split('\n')[0]:0 for p in fd.readlines() }
+
+        for k, v in addresses.items():
+            conn.send_command('set', addr_prefix+k, v)
+            conn.read_response()
+    else:
+        conn.send_command('mget', *keys)
+        vals = conn.read_response()
+
+        for k, v in zip(keys, vals):
+            addresses[k.split('.')[-1]] = int(v)
 
     conn.disconnect()
 
-    for k, v in zip(keys, vals):
-        addresses[k.split('.')[-1]] = int(v)
 
 def whereyoulive(addr):
 
