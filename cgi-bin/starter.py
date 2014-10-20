@@ -19,6 +19,8 @@ import roman_number
 import leave_message
 import user_info
 import youout
+import whereyoulive
+import whereyoulive_sum
 
 class Starter(object):
 
@@ -65,6 +67,14 @@ class Starter(object):
     @cherrypy.expose
     def youout(self, **kwargs):
         return youout.reply(kwargs)
+
+    @cherrypy.expose
+    def whereyoulive(self, **kwargs):
+        return whereyoulive.reply(kwargs)
+
+    @cherrypy.expose
+    def whereyoulive_sum(self, **kwargs):
+        return whereyoulive_sum.reply(kwargs)
 
     @cherrypy.expose
     def index(self):
@@ -123,7 +133,7 @@ class Starter(object):
         ret += "<label><b>Flower: </b></label><br>"
         
         for f in flowers:
-            ret += "<input type=radio name=flower value=\"" + str(f) + "\"/> <b>" + str(f) + "</b><br>"
+            ret += "<input type=\"radio\" name=\"flower\" value=\"" + str(f) + "\"/> <b>" + str(f) + "</b><br>"
         
         ret += "<input type=\"submit\" value=\"Done!\"/><br>"
         ret += "</form>"
