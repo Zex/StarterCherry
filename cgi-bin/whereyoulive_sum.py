@@ -116,8 +116,7 @@ def reply(kwargs = {}):
     elif kwargs.has_key('elseaddr'):
         whereyoulive(kwargs['elseaddr'])
     else:
-        ret += "<span>No address selected</span><br>"
-        ret += "<span>Previous Result</span><br>"
+        ret += "<span>No address selected. <span>Previous Result</span><br>"
 
     ret += whereyoulive_sum()
 
