@@ -23,6 +23,11 @@ th, tr, td {
     border: 3px solid #157401;
 }
 
+tr[align=center] {
+    color: #ff0000;
+    border: 3px solid #157401;
+}
+
 table {
     background-color: #152079;
     color: #837192;
