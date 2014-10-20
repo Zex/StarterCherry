@@ -234,4 +234,7 @@ if __name__ == '__main__':
         }
     }
 
+    from socket import gethostname
+
+    cherrypy.server.bind_addr = (gethostname(), 80)
     cherrypy.quickstart(Starter(), '/', conf)
