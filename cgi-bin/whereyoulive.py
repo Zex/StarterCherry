@@ -34,10 +34,9 @@ def reply(kwargs = {}):
     ret += "<form action=\"whereyoulive_sum\" method=\"post\">" 
 
     for a in addresses.items():
-        if len(a[0]) == 0: continue
         ret += "<input type=\"radio\" name=\"addr\" value=\"" + str(a[0]) + "\"/> <b>" + str(a[0]) + "</b><br>"
 
-    ret += "<input type=\"radio\" name=\"addr\" value=\"" + '' + "\"/>"
+#    ret += "<input type=\"radio\" name=\"addr\" value=\"" + '' + "\"/>"
     ret += "<label for=\"elseaddr\">" + "Somewhere Else ..." + "</label><br>"
     ret += "<input type=\"text\" name=\"elseaddr\"/><br>"
     ret += "</form>"
