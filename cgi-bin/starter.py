@@ -13,7 +13,7 @@
 
 #with open('res/Addrs.Sample', 'w') as fd:
 #  for x in xrange(50):
-#    fd.write(''.join(random.choice(string.ascii_letters+string.digits+' .@') for x in xrange(30))+'\n')
+#    fd.write(''.join(random.choice(string.ascii_letters+string.digits+' .@') for x in xrange(random.randint(10, 30)))+'\n')
 
 import time
 import os
