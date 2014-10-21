@@ -44,6 +44,8 @@ def reply(req):
     ret += "</head>"
     
     ret += "<body>"
+    ret += "<h2>Welcome, " + req.headers["Remote-Addr"] + "!</h2>"
+    ret += "<span>" + req.headers["User-Agent"] + "</span><br>"
     
     ret += create_html(config['/res']['tools.staticdir.dir'] + '/' + 'all-log-pandas.xls', 'user-info')
     

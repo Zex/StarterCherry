@@ -279,6 +279,8 @@ def reply(req):#alpha_file = ''):
     ret += "</head>"
     
     ret += "<body>"
+    ret += "<h2>Welcome, " + req.headers["Remote-Addr"] + "!</h2>"
+    ret += "<span>" + req.headers["User-Agent"] + "</span><br>"
     
     random_plot(1, 317, titlestr = 'Molecular Random Motion xxx')
 #    essay_char(open('res/Licence.Sample', 'ro').read())

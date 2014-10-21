@@ -4,9 +4,16 @@
 # Author: Zex <top_zlynch@yahoo.com>
 #
 
+# python -c 'for x in dir(__builtins__):print "<"+x+">\n["+x.__doc__+"]\n"' 
+# 
+# xfile.py
+# if __name__ == '__main__':
+#    print __file__
+# python < xfile.py
+
 import time
 import os
-import cherrypy
+import cherrypy as cherry
 
 import ranseq
 import hello_baby
@@ -24,59 +31,60 @@ import whereyoulive_sum
 
 class Starter(object):
 
-    @cherrypy.expose
+    @cherry.expose
     def ranseq(self):
-        return ranseq.reply()
+        return ranseq.reply(cherry.request)
 
-    @cherrypy.expose
+    @cherry.expose
     def hello_baby(self, fr_name=''):
-        return hello_baby.reply(fr_name)
+        return hello_baby.reply(cherry.request, fr_name)
 
-    @cherrypy.expose
+    @cherry.expose
     def user_info(self):
-        return user_info.reply(cherrypy.request)
+        return user_info.reply(cherry.request)
 
-    @cherrypy.expose
+    @cherry.expose
     def plotting(self):
-        return plotting.reply(cherrypy.request)
+        return plotting.reply(cherry.request)
 
-    @cherrypy.expose
+    @cherry.expose
     def icecream_box(self, **kwargs):
-        return icecream_box.reply(kwargs)
+        return icecream_box.reply(cherry.request, kwargs)
 
-    @cherrypy.expose
+    @cherry.expose
     def flower_man(self, **kwargs):
-        return flower_man.reply(kwargs)
+        return flower_man.reply(cherry.request, kwargs)
 
-    @cherrypy.expose
+    @cherry.expose
     def motion_trigger(self, **kwargs):
-        return motion_trigger.reply(kwargs)
+        return motion_trigger.reply(cherry.request, kwargs)
 
-    @cherrypy.expose
+    @cherry.expose
     def upload_file(self, **kwargs):
-        return upload_file.reply(cherrypy.request, kwargs)
+        return upload_file.reply(cherry.request, kwargs)
 
-    @cherrypy.expose
+    @cherry.expose
     def roman_number(self, **kwargs):
-        return roman_number.reply(cherrypy.request, kwargs)
+        return roman_number.reply(cherry.request, kwargs)
 
-    @cherrypy.expose
+    @cherry.expose
     def leave_message(self, **kwargs):
-        return leave_message.reply(cherrypy.request, kwargs)
+        return leave_message.reply(cherry.request, kwargs)
 
-    @cherrypy.expose
+    @cherry.expose
     def youout(self, **kwargs):
         return youout.reply(kwargs)
 
-    @cherrypy.expose
+    @cherry.expose
     def whereyoulive(self, **kwargs):
-        return whereyoulive.reply(kwargs)
+        return whereyoulive.reply(cherry.request, kwargs)
 
-    @cherrypy.expose
+    @cherry.expose
     def whereyoulive_sum(self, **kwargs):
         return whereyoulive_sum.reply(kwargs)
 
-    @cherrypy.expose
+    @cherry.expose
+    @cherry.tools.gzip()
     def index(self):
 
         ret = ''
@@ -211,6 +219,7 @@ class Starter(object):
         return ret
 
 if __name__ == '__main__':
+
     conf = {
         '/': {
             'tools.sessions.on': True,
@@ -236,5 +245,19 @@ if __name__ == '__main__':
 
     from socket import gethostname
 
-    cherrypy.server.bind_addr = (gethostname(), 80)
-    cherrypy.quickstart(Starter(), '/', conf)
+#    cherry.server.bind_addr = (gethostname(), 7777)
+    cherry.server.bind_addr = ('192.168.0.116', 7777)
+    cherry.quickstart(Starter(), '/', conf)
+
+#    server1 = cherry._cpwsgi.CPWSGIServer()
+#    server1.bind_addr = (gethostname(), 7777)
+#
+#    server2 = cherry._cpwsgi.SCPWSGIServer()
+#    server2.bind_addr = (gethostname(), 11119)
+#
+#    cherry.server.httpservers = {
+#        server1 : (gethostname(), 7777),
+#        server2 : (gethostname(), 11119)
+#    }
+#
+#    cherry.server.start()

@@ -9,11 +9,9 @@
 
 #TODO: store in redis db
 
-# addr -> count
 from whereyoulive_sum import addresses, preset
-#addresses = {}
 
-def reply(kwargs = {}):
+def reply(req, kwargs = {}):
 
     title = "WhereYouLive"
     
@@ -27,16 +25,14 @@ def reply(kwargs = {}):
     ret += "</head>"
     
     ret += "<body>"
+    ret += "<h2>Welcome, " + req.headers["Remote-Addr"] + "!</h2>"
+    ret += "<span>" + req.headers["User-Agent"] + "</span><br><br>"
   
-#    if len(addresses) == 0:
-#        preset("../res/Addrs.Sample")
-
     ret += "<form action=\"whereyoulive_sum\" method=\"post\">" 
 
     for a in addresses.items():
         ret += "<input type=\"radio\" name=\"addr\" value=\"" + str(a[0]) + "\"/> <b>" + str(a[0]) + "</b><br>"
 
-#    ret += "<input type=\"radio\" name=\"addr\" value=\"" + '' + "\"/>"
     ret += "<label for=\"elseaddr\">" + "Somewhere Else ..." + "</label><br>"
     ret += "<input type=\"text\" name=\"elseaddr\"/><br>"
     ret += "</form>"

@@ -39,7 +39,8 @@ def preset(sample):
         vals = conn.read_response()
 
         for k, v in zip(keys, vals):
-            addresses[k.split('.')[-1]] = int(v)
+            addresses[k.replace(addr_prefix, '')] = int(v)
+#            addresses[k.split('.')[-1]] = int(v)
 
     conn.disconnect()
 
@@ -76,7 +77,7 @@ def whereyoulive_sum():
 
     for item in vks:
         ret += "<tr>"
-        ret += "<td>" + str(item[1]).split('.')[-1] + "</td>"
+        ret += "<td>" + str(item[1]).replace(addr_prefix, '') + "</td>"
         ret += "<td><span>" + str(item[0]) + "</span></td>"
         ret += "</tr>"
 

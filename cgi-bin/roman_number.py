@@ -100,6 +100,8 @@ def reply(req, kwargs = {}):
     ret += "</head>"
     
     ret += "<body>"
+    ret += "<h2>Welcome, " + req.headers["Remote-Addr"] + "!</h2>"
+    ret += "<span>" + req.headers["User-Agent"] + "</span><br>"
     
     ret += roman_number(kwargs["rnum"])
     

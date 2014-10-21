@@ -53,7 +53,7 @@ def ranseq(length):
 
     return ret
 
-def reply():
+def reply(req):
 
     title = "Random Seq"
     ret = ''
@@ -69,6 +69,13 @@ def reply():
     
     ret += "<body>"
     
+    ret += "<h2>Welcome, " + req.headers["Remote-Addr"] + "!</h2>"
+    ret += "<span>" + req.headers["User-Agent"] + "</span><br>"
+
+#    for item in req.headers.items():
+#        ret += "<span>" + item[0] + ": </span>"
+#        ret += "<span>" + item[1] + "</span><br>"
+
     for i in [100, 10, 1000, 999, 3]:
         ret += "<h2>" + "Ranseq with " + str(i) + "</h2>"
         ret += ranseq(i)

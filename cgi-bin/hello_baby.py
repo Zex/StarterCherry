@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-def reply(fr_name = ''):
+def reply(req, fr_name = ''):
 
     title = "Hello Baby"
 
@@ -16,6 +16,9 @@ def reply(fr_name = ''):
     ret += "</head>"
     
     ret += "<body>"
+
+    ret += "<h2>Welcome, " + req.headers["Remote-Addr"] + "!</h2>"
+    ret += "<span>" + req.headers["User-Agent"] + "</span><br>"
     
     ret += "<p>" + fr_name + "</p>"
     
