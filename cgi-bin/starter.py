@@ -11,6 +11,10 @@
 #    print __file__
 # python < xfile.py
 
+#with open('res/Addrs.Sample', 'w') as fd:
+#  for x in xrange(50):
+#    fd.write(''.join(random.choice(string.ascii_letters+string.digits+' .@') for x in xrange(30))+'\n')
+
 import time
 import os
 import cherrypy as cherry
