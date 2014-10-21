@@ -25,7 +25,8 @@ th, tr, td {
 
 tr[align=center] {
     color: #ff0000;
-    border: 3px solid #157401;
+    background-color: #eeeeee;
+    border: 20px solid #157401;
 }
 
 table {
@@ -59,4 +60,13 @@ textarea[readonly=true] {
 
 span {
     color: #0dd00d;
+}
+
+pre {
+    font-size: 20px;
+    color: #a22281;
+    background-color: #dddddd;
+    white-space: pre;
+    width: 80%;
+    display: block;
 }
