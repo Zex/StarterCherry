@@ -34,6 +34,7 @@ def preset(sample):
         for x in conn.zrange(addr_prefix, 0, conn.zcard(addr_prefix)):
             addresses[x] = int(conn.zscore(addr_prefix, x))
 
+    conn.save()
 
 def whereyoulive(addr):
 
@@ -46,6 +47,8 @@ def whereyoulive(addr):
     else:
         addresses[addr] = 1
         conn.zadd(addr_prefix, addr, 1)
+        
+    conn.save()
 
 def whereyoulive_sum():
 
