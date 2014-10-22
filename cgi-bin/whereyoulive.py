@@ -7,11 +7,9 @@
 #
 # http://localhost:8080/whereyoulive
 
-#TODO: store in redis db
+import whereyoulive_sum
 
-from whereyoulive_sum import addresses, preset
-
-def reply(req, kwargs = {}):
+def survey(req, kwargs = {}):
 
     title = "WhereYouLive"
     
@@ -28,9 +26,9 @@ def reply(req, kwargs = {}):
     ret += "<h2>Welcome, " + req.headers["Remote-Addr"] + "!</h2>"
     ret += "<span>" + req.headers["User-Agent"] + "</span><br><br>"
   
-    ret += "<form action=\"whereyoulive_sum\" method=\"post\">" 
+    ret += "<form action=\"whereyoulive\" method=\"post\">" 
 
-    for a in addresses.items():
+    for a in whereyoulive_sum.addresses.items():
         ret += "<input type=\"radio\" name=\"addr\" value=\"" + str(a[0]) + "\"/> <b>" + str(a[0]) + "</b><br>"
 
     ret += "<label for=\"elseaddr\">" + "Somewhere Else ..." + "</label><br>"
@@ -41,4 +39,12 @@ def reply(req, kwargs = {}):
     ret += "</html>"
 
     return ret
+
+def reply(req, kwargs = {}):
+
+    if kwargs.has_key('addr') or kwargs.has_key('elseaddr'):
+        return whereyoulive_sum.reply(kwargs)
+    else:
+        return survey(req, kwargs)
+
 

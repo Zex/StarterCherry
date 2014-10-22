@@ -7,8 +7,6 @@
 #
 # http://localhost:8080/whereyoulive
 
-#TODO: store in redis db
-
 from redis import Redis#Connection
 from socket import gethostname
 
