@@ -31,7 +31,7 @@ import leave_message
 import user_info
 import youout
 import whereyoulive
-import whereyoulive_sum
+#import whereyoulive_sum
 
 class Starter(object):
 
@@ -83,9 +83,9 @@ class Starter(object):
     def whereyoulive(self, **kwargs):
         return whereyoulive.reply(cherry.request, kwargs)
 
-    @cherry.expose
-    def whereyoulive_sum(self, **kwargs):
-        return whereyoulive_sum.reply(kwargs)
+#    @cherry.expose
+#    def whereyoulive_sum(self, **kwargs):
+#        return whereyoulive_sum.reply(kwargs)
 
     @cherry.expose
     @cherry.tools.gzip()
@@ -244,6 +244,13 @@ if __name__ == '__main__':
         '/uploads': {
             'tools.staticdir.on': True,
             'tools.staticdir.dir': '../uploads'
+        },
+        '/default': {
+            'tools.staticdir.on': True,
+            'tools.staticdir.dir': '../default'
+        },
+        'global': {
+            'error_page.404': '../default/Starter404.html'
         }
     }
 
