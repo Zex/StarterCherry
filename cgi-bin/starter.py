@@ -37,6 +37,8 @@ class Starter(object):
 
     @cherry.expose
     def ranseq(self):
+#        cherry.response.headers['Expires'] = '2s'
+#        cherry.response.headers['Server'] = 'Starter Powered by CherryPy/3.2.2'
         return ranseq.reply(cherry.request)
 
     @cherry.expose
@@ -250,14 +252,15 @@ if __name__ == '__main__':
             'tools.staticdir.dir': '../default'
         },
         'global': {
-            'error_page.404': '../default/Starter404.html'
+            'error_page.404': '../default/Starter404.html',
+            'error_page.500': '../default/Starter500.html'
         }
     }
 
     from socket import gethostname
 
-#    cherry.server.bind_addr = (gethostname(), 7777)
-    cherry.server.bind_addr = ('192.168.0.116', 7777)
+    cherry.server.bind_addr = (gethostname(), 7777)
+#    cherry.server.bind_addr = ('192.168.0.116', 7777)
     cherry.quickstart(Starter(), '/', conf)
 
 #    server1 = cherry._cpwsgi.CPWSGIServer()
