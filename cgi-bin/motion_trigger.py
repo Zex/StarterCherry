@@ -11,6 +11,7 @@ def reply(req, kwargs = {}):
     ret += "<head>"
     ret += "<title>" + title + "</title>"
     ret += "<link href=\"/css/basic.css\" rel=\"stylesheet\" type=\"text/css\">"
+    ret += "<link href=\"/img/badsmile.jpg\" rel=\"icon\" type=\"image/jpg\">"
     ret += "<meta charset=\"UTF-8\">"
     ret += "</head>"
     
