@@ -100,6 +100,7 @@ class Starter(object):
         ret += "<head>"
         ret += "<title>Starter</title>"
         ret += "<link href=\"/css/basic.css\" rel=\"stylesheet\" type=\"text/css\">"
+        ret += "<link href=\"/img/badsmile.jpg\" rel=\"icon\" type=\"image/jpg\">"
         ret += "<meta charset=\"UTF-8\">"
         ret += "</head>"
         
@@ -259,8 +260,8 @@ if __name__ == '__main__':
 
     from socket import gethostname
 
-    cherry.server.bind_addr = (gethostname(), 7777)
-#    cherry.server.bind_addr = ('192.168.0.116', 7777)
+#    cherry.server.bind_addr = (gethostname(), 7777)
+    cherry.server.bind_addr = ('192.168.0.116', 7777)
     cherry.quickstart(Starter(), '/', conf)
 
 #    server1 = cherry._cpwsgi.CPWSGIServer()
