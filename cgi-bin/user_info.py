@@ -56,7 +56,7 @@ def reply(cherry):
     ret += "<div id=\"content\">"
     ret += "<h2>Welcome, " + req.headers["Remote-Addr"] + "!</h2>"
     ret += "<span>" + req.headers["User-Agent"] + "</span><br>"
-    
+
     buf = create_html(config['/res']['tools.staticdir.dir'] + '/' + 'all-log-pandas.xls', 'user-info')
     for tag in ['table', 'th', 'tr', 'td']:
         buf = buf.replace('<' + tag + ' ', '<' + tag + ' class=\"normal\" ')

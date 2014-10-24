@@ -295,7 +295,7 @@ def reply(cherry):
 
     from threading import Thread
     
-    Thread(target=random_plot, args=(1, 317, 'Molecular Random Motion xxx')).start()
+    Thread(target=random_plot, args=(1, 317, 1, 'Molecular Random Motion xxx',)).start()
     with open(alpha_file, 'ro') as fd:
         Thread(target=essay_char, args=(fd.read(),)).start()
 #    random_plot(1, 317, titlestr = 'Molecular Random Motion xxx')
