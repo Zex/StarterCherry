@@ -2,10 +2,11 @@
 
 config = {}
 
-def reply(req, kwargs = {}):
+def reply(cherry, kwargs = {}):
 
     global config
-    config = req.config
+    config = cherry.config
+    req = cherry.request
 
     title = kwargs["file_name"].filename
     ret = ''
@@ -18,9 +19,18 @@ def reply(req, kwargs = {}):
     ret += "<link href=\"/css/basic.css\" rel=\"stylesheet\" type=\"text/css\">"
     ret += "<link href=\"/img/badsmile.jpg\" rel=\"icon\" type=\"image/jpg\">"
     ret += "<meta charset=\"UTF-8\">"
-    ret += "</head>"
+    ret += "</head><body>"
     
-    ret += "<body>"
+    ret += "<div class=\"navigator\">"
+    ret += "<a name=\"Navigator\"><ul>Navigator</ul></a>"
+    ret += "<ul>"
+    ret += "<li><a href=\"index#Motions\" title=\"Motions\">Motions</a></li>"
+    ret += "<li><a href=\"index#RandomSeq\" title=\"Random Seq\">Random Seq</a></li>"
+    ret += "<li><a href=\"index#LeaveMessage\" title=\"Leave a Message\">Leave a Message</a></li>"
+    ret += "</ul>"
+    ret += "</div>"
+
+    ret += "<div id=\"content\">"
     
     for k in kwargs.items():
 
@@ -34,7 +44,8 @@ def reply(req, kwargs = {}):
                 fd.write(line)
 
         ret += "</span>"
-    
+
+    ret += "div"    
     ret += "</body>"
     ret += "</html>"
 

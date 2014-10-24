@@ -27,10 +27,11 @@ def create_html(xlsname, sheetname):
     #xls.to_excel(xlsname, sheetname, index=False)
     return xls.to_html(index=False)
 
-def reply(req):
+def reply(cherry):
 
     global config
-    config = req.config
+    config = cherry.config
+    req = cherry.request
 
     title = "User Info"
     
@@ -41,14 +42,27 @@ def reply(req):
     ret += "<title>" + title + "</title>"
     ret += "<link href=\"/css/basic.css\" rel=\"stylesheet\" type=\"text/css\">"
     ret += "<meta charset=\"UTF-8\">"
-    ret += "</head>"
+    ret += "</head><body>"
     
-    ret += "<body>"
+    ret += "<div class=\"navigator\">"
+    ret += "<a name=\"Navigator\"><ul>Navigator</ul></a>"
+    ret += "<ul>"
+    ret += "<li><a href=\"index#Motions\" title=\"Motions\">Motions</a></li>"
+    ret += "<li><a href=\"index#RandomSeq\" title=\"Random Seq\">Random Seq</a></li>"
+    ret += "<li><a href=\"index#LeaveMessage\" title=\"Leave a Message\">Leave a Message</a></li>"
+    ret += "</ul>"
+    ret += "</div>"
+
+    ret += "<div id=\"content\">"
     ret += "<h2>Welcome, " + req.headers["Remote-Addr"] + "!</h2>"
     ret += "<span>" + req.headers["User-Agent"] + "</span><br>"
     
-    ret += create_html(config['/res']['tools.staticdir.dir'] + '/' + 'all-log-pandas.xls', 'user-info')
+    buf = create_html(config['/res']['tools.staticdir.dir'] + '/' + 'all-log-pandas.xls', 'user-info')
+    for tag in ['table', 'th', 'tr', 'td']:
+        buf = buf.replace('<' + tag + ' ', '<' + tag + ' class=\"normal\" ')
+    ret += buf
     
+    ret += "</div>"
     ret += "</body>"
     ret += "</html>"
 

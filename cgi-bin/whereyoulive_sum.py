@@ -50,25 +50,25 @@ def whereyoulive(addr):
 
 def whereyoulive_sum():
 
-    ret = "<table>"
-    ret += "<th>" + "Address" + "</th>"
-    ret += "<th>" + "Total/Address" + "</th>"
+    ret = "<table class=\"normal\">"
+    ret += "<th class=\"normal\">" + "Address" + "</th>"
+    ret += "<th class=\"normal\">" + "Total/Address" + "</th>"
 
     conn = Redis(host=gethostname(), port=6379)
     vals = []
 
     for x in conn.zrange(addr_prefix, 0, conn.zcard(addr_prefix)):
-        ret += "<tr>"
-        ret += "<td>" + x + "</td>"
+        ret += "<tr class=\"normal\">"
+        ret += "<td class=\"normal\">" + x + "</td>"
         vals.append(int(conn.zscore(addr_prefix, x)))
-        ret += "<td><span>" + str(vals[-1]) + "</span></td>"
+        ret += "<td class=\"normal\"><span>" + str(vals[-1]) + "</span></td>"
         ret += "</tr>"
 
-    ret += "<tr align=\"center\"><td>" + "Sum" + "</td>"
+    ret += "<tr align=\"center\"><td class=\"normal\">" + "Sum" + "</td>"
     if len(vals) == 0:
-        ret += "<td>" + "0" + "</td></tr>"
+        ret += "<td class=\"normal\">" + "0" + "</td></tr>"
     else:
-        ret += "<td>" + str(reduce(lambda i, j : i+j, [i for i in vals])) + "</td></tr>"
+        ret += "<td class=\"normal\">" + str(reduce(lambda i, j : i+j, [i for i in vals])) + "</td></tr>"
     ret += "</table>"
 
     return ret
@@ -85,9 +85,18 @@ def reply(kwargs = {}):
     ret += "<link href=\"/css/basic.css\" rel=\"stylesheet\" type=\"text/css\">"
     ret += "<link href=\"/img/badsmile.jpg\" rel=\"icon\" type=\"image/jpg\">"
     ret += "<meta charset=\"UTF-8\">"
-    ret += "</head>"
+    ret += "</head><body>"
     
-    ret += "<body>"
+    ret += "<div class=\"navigator\">"
+    ret += "<a name=\"Navigator\"><ul>Navigator</ul></a>"
+    ret += "<ul>"
+    ret += "<li><a href=\"index#Motions\" title=\"Motions\">Motions</a></li>"
+    ret += "<li><a href=\"index#RandomSeq\" title=\"Random Seq\">Random Seq</a></li>"
+    ret += "<li><a href=\"index#LeaveMessage\" title=\"Leave a Message\">Leave a Message</a></li>"
+    ret += "</ul>"
+    ret += "</div>"
+
+    ret += "<div id=\"content\">"
 
     if kwargs.has_key('addr'):
         whereyoulive(kwargs['addr'])
@@ -98,6 +107,7 @@ def reply(kwargs = {}):
 
     ret += whereyoulive_sum()
 
+    ret += "</div>"
     ret += "</body>"
     ret += "</html>"
 

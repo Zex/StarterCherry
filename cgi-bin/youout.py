@@ -33,9 +33,18 @@ def reply(kwargs = {}):
     ret += "<link href=\"/css/basic.css\" rel=\"stylesheet\" type=\"text/css\">"
     ret += "<link href=\"/img/badsmile.jpg\" rel=\"icon\" type=\"image/jpg\">"
     ret += "<meta charset=\"UTF-8\">"
-    ret += "</head>"
+    ret += "</head><body>"
     
-    ret += "<body>"
+    ret += "<div class=\"navigator\">"
+    ret += "<a name=\"Navigator\"><ul>Navigator</ul></a>"
+    ret += "<ul>"
+    ret += "<li><a href=\"index#Motions\" title=\"Motions\">Motions</a></li>"
+    ret += "<li><a href=\"index#RandomSeq\" title=\"Random Seq\">Random Seq</a></li>"
+    ret += "<li><a href=\"index#LeaveMessage\" title=\"Leave a Message\">Leave a Message</a></li>"
+    ret += "</ul>"
+    ret += "</div>"
+
+    ret += "<div id=\"content\">"
     
     ret += "<div>"
     ret += "<label for=total_player><b>Total player: </b></label>"
@@ -49,7 +58,8 @@ def reply(kwargs = {}):
     ret += "<label><b>Lucky Dog: </b><label>"
     ret += "<label><b>" + youout(int(kwargs['total_player']), int(kwargs['unlucky_n'])) + "</b></label><br>"
     ret += "</div>"
-    
+
+    ret += "/div"    
     ret += "</body>"
     ret += "</html>"
 
