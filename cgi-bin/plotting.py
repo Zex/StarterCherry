@@ -258,11 +258,12 @@ def essay_char(essay):
 #    show()
     savefig(config['/img']['tools.staticdir.dir'] + '/' + titlestr.replace(' ', '-').lower(), bbox_inches='tight', pad_inches=0)
 
-def reply(req):#alpha_file = ''):
+def reply(cherry):
 
     global config
 
-    config = req.config
+    config = cherry.config
+    req = cherry.request
 
     title = "Plots"
     alpha_file = config['/res']['tools.staticdir.dir'] + '/Licence.Sample'
@@ -277,36 +278,51 @@ def reply(req):#alpha_file = ''):
     ret += "<link href=\"/css/basic.css\" rel=\"stylesheet\" type=\"text/css\">"
     ret += "<link href=\"/img/badsmile.jpg\" rel=\"icon\" type=\"image/jpg\">"
     ret += "<meta charset=\"UTF-8\">"
-    ret += "</head>"
+    ret += "</head><body>"
     
-    ret += "<body>"
+    ret += "<div class=\"navigator\">"
+    ret += "<a name=\"Navigator\"><ul>Navigator</ul></a>"
+    ret += "<ul>"
+    ret += "<li><a href=\"index#Motions\" title=\"Motions\">Motions</a></li>"
+    ret += "<li><a href=\"index#RandomSeq\" title=\"Random Seq\">Random Seq</a></li>"
+    ret += "<li><a href=\"index#LeaveMessage\" title=\"Leave a Message\">Leave a Message</a></li>"
+    ret += "</ul>"
+    ret += "</div>"
+
+    ret += "<div id=\"content\">"
     ret += "<h2>Welcome, " + req.headers["Remote-Addr"] + "!</h2>"
     ret += "<span>" + req.headers["User-Agent"] + "</span><br>"
+
+    from threading import Thread
     
-    random_plot(1, 317, titlestr = 'Molecular Random Motion xxx')
-#    essay_char(open('res/Licence.Sample', 'ro').read())
-    essay_char(open(alpha_file, 'ro').read())
-    ret += "<table>"
-    ret += "<tr>"
-    ret += "<td>"
+    Thread(target=random_plot, args=(1, 317, 'Molecular Random Motion xxx')).start()
+    with open(alpha_file, 'ro') as fd:
+        Thread(target=essay_char, args=(fd.read(),)).start()
+#    random_plot(1, 317, titlestr = 'Molecular Random Motion xxx')
+#    essay_char(fd.read())
+
+    ret += "<table class=\"normal\">"
+    ret += "<tr class=\"normal\">"
+    ret += "<td class=\"normal\">"
     ret += "<img src=\"/img/molecular-random-motion-xxx.png\">"
     ret += "</td>"
-    ret += "<td>"
+    ret += "<td class=\"normal\">"
     ret += "<img src=\"/img/molecular-random-motion-xxx.png\">"
     ret += "</td>"
-    ret += "<td>"
+    ret += "<td class=\"normal\">"
     ret += "<img src=\"/img/molecular-random-motion-xxx.png\">"
     ret += "</td>"
     ret += "</tr>"
     ret += "</table>"
-    ret += "<table>"
-    ret += "<tr>"
-    ret += "<td>"
+    ret += "<table class=\"normal\">"
+    ret += "<tr class=\"normal\">"
+    ret += "<td class=\"normal\">"
     ret += "<img src=\"/img/essay-char.png\">"
     ret += "</td>"
     ret += "</tr>"
     ret += "</table>"
- 
+
+    ret += "</div>" 
     ret += "</body>"
     ret += "</html>"
 
