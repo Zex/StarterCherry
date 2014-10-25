@@ -282,8 +282,8 @@ if __name__ == '__main__':
 
     from socket import gethostname
 
-#    cherry.server.bind_addr = (gethostname(), 7777)
-    cherry.server.bind_addr = ('192.168.0.116', 7777)
+    cherry.server.bind_addr = (gethostname(), 7777)
+#    cherry.server.bind_addr = ('192.168.0.116', 7777)
     cherry.quickstart(Starter(), '/', conf)
 
 #    server1 = cherry._cpwsgi.CPWSGIServer()
