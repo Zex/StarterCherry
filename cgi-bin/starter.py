@@ -232,12 +232,11 @@ class Starter(object):
         ret += "</form>"
         ret += "</td>"
         
-        for i in xrange(1):
-            ret += "<td class=\"normal\">"
-            ret += "<form action=\"hello_baby\" method=get>"
-            ret += "<input type=\"submit\" value=\"TOBE CONTINUE...\"/><br>"
-            ret += "</form>"
-            ret += "</td>"
+#            ret += "<td class=\"normal\">"
+#            ret += "<form action=\"hello_baby\" method=get>"
+#            ret += "<input type=\"submit\" value=\"TOBE CONTINUE...\"/><br>"
+#            ret += "</form>"
+#            ret += "</td>"
         
         ret += "</tr>"
         ret += "</table>"
