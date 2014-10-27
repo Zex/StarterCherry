@@ -19,6 +19,7 @@ import time
 import os
 import cherrypy as cherry
 
+import prepdef
 import ranseq
 import hello_baby
 import plotting
@@ -31,9 +32,11 @@ import leave_message
 import user_info
 import youout
 import whereyoulive
-#import whereyoulive_sum
 
 class Starter(object):
+
+    prepdef.Page(404, "Hmm...This page might be stolen ... ...")
+    prepdef.Page(500, "Oh no! Starter has a headache ... ...")
 
     @cherry.expose
     def ranseq(self):
@@ -232,11 +235,11 @@ class Starter(object):
         ret += "</form>"
         ret += "</td>"
         
-#            ret += "<td class=\"normal\">"
-#            ret += "<form action=\"hello_baby\" method=get>"
-#            ret += "<input type=\"submit\" value=\"TOBE CONTINUE...\"/><br>"
-#            ret += "</form>"
-#            ret += "</td>"
+        ret += "<td class=\"normal\">"
+        ret += "<form action=\"<?php echo hello;?>\" method=post>"
+        ret += "<input type=\"submit\" value=\"Dial proxy\"/><br>"
+        ret += "</form>"
+        ret += "</td>"
         
         ret += "</tr>"
         ret += "</table>"
@@ -277,12 +280,25 @@ if __name__ == '__main__':
             'tools.staticdir.on': True,
             'tools.staticdir.dir': '../default'
         },
+        '/tests': {
+            'tools.staticdir.on': True,
+            'tools.staticdir.dir': '../tests'
+        },
     }
 
-    from socket import gethostname
+    from socket import gethostname, gethostbyname
+    from commands import getoutput
+    from re import search
 
-    cherry.server.bind_addr = (gethostname(), 7777)
 #    cherry.server.bind_addr = ('192.168.0.116', 7777)
+    mat = search('\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}', getoutput('ip -o -f inet addr show dev eth0'))
+
+    if mat != None:
+        cherry.server.bind_addr = (mat.group(), 7777)
+    else:
+        cherry.server.bind_addr = (gethostbyname(gethostname()), 7777)
+#    cherry.server.bind_addr = ('192.168.0.116', 7777)
+
     cherry.quickstart(Starter(), '/', conf)
 
 #    server1 = cherry._cpwsgi.CPWSGIServer()
