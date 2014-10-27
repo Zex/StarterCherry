@@ -8,7 +8,7 @@
 # http://localhost:8080/whereyoulive
 
 from redis import Redis#Connection
-from socket import gethostname
+from socket import gethostname, gethostbyname
 
 # addr -> count
 addresses = {}
@@ -19,7 +19,8 @@ def preset(sample):
 
     global addresses
 
-    conn = Redis(host=gethostname(), port=6379)
+    conn = Redis(host=gethostbyname(gethostname()), port=6379)
+#    conn = Redis(host=gethostname(), port=6379)
 
     if conn.zcard(addr_prefix) == 0:
         with open(sample, 'r') as fd:
