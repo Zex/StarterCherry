@@ -37,6 +37,7 @@ class Starter(object):
 
     prepdef.Page(404, "Hmm...This page might be stolen ... ...")
     prepdef.Page(500, "Oh no! Starter has a headache ... ...")
+    prepdef.Page(403, "Oh no! Starter has a headache ... ...")
 
     @cherry.expose
     def ranseq(self):
@@ -123,7 +124,7 @@ class Starter(object):
         ret += "</ul>"
         ret += "</div>"
 
-        ret += "<div id=\"content\">"
+        ret += "<div class=\"content\">"
         ret += "<div class=\"normal\">"
         ret += "<img src=\"/img/cattail.jpg\" height=200px>"
         ret += "</div>"

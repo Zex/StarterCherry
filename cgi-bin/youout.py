@@ -44,7 +44,7 @@ def reply(kwargs = {}):
     ret += "</ul>"
     ret += "</div>"
 
-    ret += "<div id=\"content\">"
+    ret += "<div class=\"content\">"
     
     ret += "<div>"
     ret += "<label for=total_player><b>Total player: </b></label>"

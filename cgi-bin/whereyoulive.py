@@ -32,7 +32,7 @@ def survey(req, kwargs = {}):
     ret += "</ul>"
     ret += "</div>"
 
-    ret += "<div id=\"content\">"
+    ret += "<div class=\"content\">"
 
     ret += "<h2>Welcome, " + req.headers["Remote-Addr"] + "!</h2>"
     ret += "<span>" + req.headers["User-Agent"] + "</span><br><br>"

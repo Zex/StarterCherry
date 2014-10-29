@@ -30,7 +30,7 @@ def reply(cherry, kwargs = {}):
     ret += "</ul>"
     ret += "</div>"
 
-    ret += "<div id=\"content\">"
+    ret += "<div class=\"content\">"
     
     for k in kwargs.items():
 

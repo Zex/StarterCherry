@@ -97,7 +97,7 @@ def reply(kwargs = {}):
     ret += "</ul>"
     ret += "</div>"
 
-    ret += "<div id=\"content\">"
+    ret += "<div class=\"content\">"
 
     if kwargs.has_key('addr'):
         whereyoulive(kwargs['addr'])

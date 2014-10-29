@@ -78,7 +78,7 @@ def reply(cherry):
     ret += "</ul>"
     ret += "</div>"
 
-    ret += "<div id=\"content\">"
+    ret += "<div class=\"content\">"
 
     
     ret += "<h2>Welcome, " + req.headers["Remote-Addr"] + "!</h2>"
